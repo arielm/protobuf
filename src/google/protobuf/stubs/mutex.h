@@ -32,6 +32,10 @@
 
 #include <google/protobuf/stubs/macros.h>
 
+#if defined(HAVE_PTHREAD)
+#include <pthread.h>
+#endif
+
 // ===================================================================
 // emulates google3/base/mutex.h
 namespace google {
