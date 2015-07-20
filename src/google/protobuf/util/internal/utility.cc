@@ -30,8 +30,6 @@
 
 #include <google/protobuf/util/internal/utility.h>
 
-#include <cmath>
-#include <algorithm>
 #include <utility>
 
 #include <google/protobuf/stubs/common.h>
