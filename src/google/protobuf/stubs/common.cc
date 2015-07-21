@@ -346,7 +346,7 @@ void Mutex::AssertHeld() {
 struct Mutex::Internal {};
 
 Mutex::Mutex() : mInternal(new Internal) {}
-Mutex::~Mutex() {}
+Mutex::~Mutex() { delete mInternal; }
 
 void Mutex::Lock() {}
 void Mutex::Unlock() {}
