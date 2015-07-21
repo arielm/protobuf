@@ -341,6 +341,17 @@ void Mutex::AssertHeld() {
   // TODO(kenton):  Maybe keep track of locking thread ID like with WIN32?
 }
 
+#elif defined(EMSCRIPTEN)
+
+struct Mutex::Internal {};
+
+Mutex::Mutex() : mInternal(new Internal) {}
+Mutex::~Mutex() {}
+
+void Mutex::Lock() {}
+void Mutex::Unlock() {}
+void Mutex::AssertHeld() {}
+
 #endif
 
 // ===================================================================
